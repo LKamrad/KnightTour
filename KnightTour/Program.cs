@@ -9,34 +9,6 @@ namespace Springertour
 {
     internal class Program
     {
-        static void AFGTest()
-        {
-            for(int i = 0; i< 8; i++)
-            {
-                for (int j = 0; j < 8; j++)
-                {
-                    Tour tour = new Tour(i, j);
-                    tour.StartTour();
-                    //tour.Print();
-
-                    Console.Write($"Testing X: {i} Y: {j} ");
-                    if(tour.GetCounter() != 64)
-                    {
-                        Console.ForegroundColor = ConsoleColor.Red;
-                        Console.WriteLine($"Fehler!!");
-                    }
-                    else
-                    {
-                        Console.ForegroundColor = ConsoleColor.Green;
-                        Console.WriteLine($"Pass!");
-                    }
-                    Console.ResetColor();
-                }
-            }
-            //Tour t2 = new Tour(2, 7);
-            //t2.StartTour();
-            //t2.Print();
-        }
         
         static void ManuallInput() 
         {
@@ -76,7 +48,7 @@ namespace Springertour
             tour.Print();
         }
 
-        static void Random()
+        static void RandomStart()
         {
             Random rnd = new Random();
 
@@ -101,9 +73,8 @@ namespace Springertour
         {
 
 
-            //Manuell();
-            Random();
-            //AFGTest();
+            //ManuallInput();
+            RandomStart();
             Console.WriteLine("Press any key to quit");
             Console.ReadLine();
 
