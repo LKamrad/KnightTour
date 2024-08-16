@@ -23,9 +23,9 @@ namespace Springertour.Model
     public class Tour
     {
 
-        List<Position> tour = new List<Position>();
+         List<Position> tour = new List<Position>();
 
-        int[,] field = new int[8, 8];
+        int[,] fieldsArray = new int[8, 8];
 
         int counter = 0;
 
@@ -75,7 +75,7 @@ namespace Springertour.Model
         {
            
             counter++;
-            field[x, y] = counter;
+            fieldsArray[x, y] = counter;
             tour = new List<Position>();
             ListOfPossibleMoves(x, y);
         }
@@ -91,6 +91,11 @@ namespace Springertour.Model
         {
             return counter;
         }
+
+        public int[,] GetFields()
+        {
+            return fieldsArray;
+        }
         public int PossibleMovesFromTheNextPosition(Position position)
         {
             int x = position.X;
@@ -98,7 +103,7 @@ namespace Springertour.Model
             int possibleMoves = 0;
             if (x + 2 < 8 && y + 1 < 8)
             {
-                if (field[x + 2, y + 1] == 0)
+                if (fieldsArray[x + 2, y + 1] == 0)
                 {
                     possibleMoves++;
                 }
@@ -106,7 +111,7 @@ namespace Springertour.Model
             }
             if (x + 2 < 8 && y - 1 >= 0)
             {
-                if (field[x + 2, y - 1] == 0)
+                if (fieldsArray[x + 2, y - 1] == 0)
                 {
                     possibleMoves++;
                 }
@@ -114,14 +119,14 @@ namespace Springertour.Model
             }
             if (x + 1 < 8 && y + 2 < 8)
             {
-                if (field[x + 1, y + 2] == 0)
+                if (fieldsArray[x + 1, y + 2] == 0)
                 {
                     possibleMoves++;
                 }
             }
             if (x + 1 < 8 && y - 2 >= 0)
             {
-                if (field[x + 1, y - 2] == 0)
+                if (fieldsArray[x + 1, y - 2] == 0)
                 {
                     possibleMoves++;
                 }
@@ -129,14 +134,14 @@ namespace Springertour.Model
 
             if (x - 2 >= 0 && y + 1 < 8)
             {
-                if (field[x - 2, y + 1] == 0)
+                if (fieldsArray[x - 2, y + 1] == 0)
                 {
                     possibleMoves++;
                 }
             }
             if (x - 2 >= 0 && y - 1 >= 0)
             {
-                if (field[x - 2, y - 1] == 0)
+                if (fieldsArray[x - 2, y - 1] == 0)
                 {
                     possibleMoves++;
                 }
@@ -144,7 +149,7 @@ namespace Springertour.Model
             }
             if (x - 1 >= 0 && y + 2 < 8)
             {
-                if (field[x - 1, y + 2] == 0)
+                if (fieldsArray[x - 1, y + 2] == 0)
                 {
                     possibleMoves++;
                 }
@@ -152,7 +157,7 @@ namespace Springertour.Model
             }
             if (x - 1 >= 0 && y - 2 >= 0)
             {
-                if (field[x - 1, y - 2] == 0)
+                if (fieldsArray[x - 1, y - 2] == 0)
                 {
                     possibleMoves++;
                 }
@@ -165,7 +170,7 @@ namespace Springertour.Model
 
             if (x + 2 < 8 && y + 1 < 8)
             {
-                if (field[x + 2, y + 1] == 0)
+                if (fieldsArray[x + 2, y + 1] == 0)
                 {
                     tour.Add(new Position(x + 2, y + 1));
                 }
@@ -173,7 +178,7 @@ namespace Springertour.Model
             }
             if (x + 2 < 8 && y - 1 >= 0)
             {
-                if (field[x + 2, y - 1] == 0)
+                if (fieldsArray[x + 2, y - 1] == 0)
                 {
                     tour.Add(new Position(x + 2, y - 1));
                 }
@@ -181,14 +186,14 @@ namespace Springertour.Model
             }
             if (x + 1 < 8 && y + 2 < 8)
             {
-                if (field[x + 1, y + 2] == 0)
+                if (fieldsArray[x + 1, y + 2] == 0)
                 {
                     tour.Add(new Position(x + 1, y + 2));
                 }
             }
             if (x + 1 < 8 && y - 2 >= 0)
             {
-                if (field[x + 1, y - 2] == 0)
+                if (fieldsArray[x + 1, y - 2] == 0)
                 {
                     tour.Add(new Position(x + 1, y - 2));
 
@@ -197,7 +202,7 @@ namespace Springertour.Model
 
             if (x - 2 >= 0 && y + 1 < 8)
             {
-                if (field[x - 2, y + 1] == 0)
+                if (fieldsArray[x - 2, y + 1] == 0)
                 {
                     tour.Add(new Position(x - 2, y + 1));
 
@@ -205,7 +210,7 @@ namespace Springertour.Model
             }
             if (x - 2 >= 0 && y - 1 >= 0)
             {
-                if (field[x - 2, y - 1] == 0)
+                if (fieldsArray[x - 2, y - 1] == 0)
                 {
                     tour.Add(new Position(x - 2, y - 1));
                 }
@@ -213,7 +218,7 @@ namespace Springertour.Model
             }
             if (x - 1 >= 0 && y + 2 < 8)
             {
-                if (field[x - 1, y + 2] == 0)
+                if (fieldsArray[x - 1, y + 2] == 0)
                 {
                     tour.Add(new Position(x - 1, y + 2));
                 }
@@ -221,7 +226,7 @@ namespace Springertour.Model
             }
             if (x - 1 >= 0 && y - 2 >= 0)
             {
-                if (field[x - 1, y - 2] == 0)
+                if (fieldsArray[x - 1, y - 2] == 0)
                 {
                     tour.Add(new Position(x - 1, y - 2));
                 }
@@ -233,14 +238,14 @@ namespace Springertour.Model
         public void Print()
         {
             Console.WriteLine();
-            for (int i = 0; i < field.GetLength(0); i++)
+            for (int i = 0; i < fieldsArray.GetLength(0); i++)
             {
 
                 Console.WriteLine($"  |----|----|----|----|----|----|----|----|");
                 Console.Write($"{8 - i} ");
-                for (int j = 0; j < field.GetLength(1); j++)
+                for (int j = 0; j < fieldsArray.GetLength(1); j++)
                 {
-                    Console.Write($"| {field[i, j],2} ");
+                    Console.Write($"| {fieldsArray[i, j],2} ");
                 }
                 Console.WriteLine("|");
             }
