@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Springertour.Model
 {
-    class Position
+    public class Position
     {
         public int X { get; set; }
         public int Y { get; set; }
@@ -20,7 +20,7 @@ namespace Springertour.Model
         }
 
     }
-    internal class Tour
+    public class Tour
     {
 
         List<Position> tour = new List<Position>();
